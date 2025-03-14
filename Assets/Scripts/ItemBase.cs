@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemBase : MonoBehaviour
+public abstract class ItemBase : MonoBehaviour, IInteractable
 {
-    abstract void ItemAction()
-    {
-        
-    }
+    public abstract void Interact(Player player);
 }

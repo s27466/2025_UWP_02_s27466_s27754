@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPotion : MonoBehaviour
+public class HealthPotion : ItemBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int healAmount = 20;
 
-    // Update is called once per frame
-    void Update()
+    public override void Interact(Player player)
     {
-        
+        player.Heal(healAmount);
+        Destroy(gameObject);
     }
 }
