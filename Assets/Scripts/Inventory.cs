@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<Coin> coins;
-    private List<Key> keys;
+    private int coins = 0;
+    private List<Key> keys = new List<Key>();
     
+    public void AddCoins(int amount)
+    {
+        coins += amount;
+    }
+
+    public void AddKey(Key key)
+    {
+        keys.Add(key);
+    }
 }
