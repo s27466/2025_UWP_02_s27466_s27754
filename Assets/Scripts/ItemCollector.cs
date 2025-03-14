@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using Items;
+using Player;
 using UnityEngine;
 
-public class ItemCollector : MonoBehaviour
-{
-    private void OnTriggerEnter(Collider other)
-    {
-        var interactable = other.GetComponent<IInteractable>();
-        if (interactable != null)
-        {
-            interactable.Interact(GetComponent<Player>());
-            print("interakcja");
-        }
+public class ItemCollector : MonoBehaviour {
+    [SerializeField] private PlayerManager playerManager;
+    
+    private void OnTriggerEnter(Collider other) {
+        var item = other.GetComponent<ItemBase>();
+        item?.Interact(playerManager);
     }
 }
